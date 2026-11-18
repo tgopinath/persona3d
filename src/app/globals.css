@@ -96,3 +96,8 @@ input[type="range"] {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Phone apps: the Kolam M3 / iOS kits draw the native bars, so hide the web header and tab bar. */
+html:is(.k-android, .k-ios) .site-header,
+html:is(.k-android, .k-ios) .site-tabbar { display: none !important; }
+html:is(.k-android, .k-ios) main { padding-bottom: 1.5rem; }

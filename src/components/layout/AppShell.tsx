@@ -80,7 +80,12 @@ export function AppShell({ children }: { children: ReactNode }) {
           ))}
         </nav>
         <div className="mt-auto space-y-3 px-2 text-[13px] text-mist">
-          {cfg?.mode === "local" && (
+          {cfg?.publicDemo ? (
+            <p className="rounded-xl bg-graphite p-3 leading-snug">
+              <span className="block font-medium text-paper">Public demo</span>
+              Shows a sample character. Photo upload needs a private deployment.
+            </p>
+          ) : cfg?.mode === "local" && (
             <p className="rounded-xl bg-graphite p-3 leading-snug">
               <span className="block font-medium text-paper">Local studio</span>
               Single user, data kept in <code className="text-paper">.data/</code> on this machine.
@@ -97,7 +102,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      <header className="sticky top-0 z-30 flex h-14 items-center justify-between bg-void/85 px-4 backdrop-blur md:hidden">
+      <header className="site-header sticky top-0 z-30 flex h-14 items-center justify-between bg-void/85 px-4 backdrop-blur md:hidden">
         <Link href="/" className="flex items-center gap-2">
           <Mark />
           <span className="font-display font-bold">Persona3D</span>
@@ -109,7 +114,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <main className="mx-auto max-w-[1440px] px-4 pb-28 pt-4 md:px-8 md:pb-12 md:pt-8">{checked ? children : null}</main>
 
-      <nav aria-label="Main" className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 bg-charcoal/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
+      <nav aria-label="Main" className="site-tabbar fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 bg-charcoal/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden">
         {NAV.filter((n) => n.href !== "/settings" && n.href !== "/studio/export").map((n) => (
           <Link key={n.href} href={n.href} aria-current={active(n.href) ? "page" : undefined} className={`flex h-16 flex-col items-center justify-center gap-1 text-[11px] ${active(n.href) ? "text-paper" : "text-mist"}`}>
             <n.icon className={`size-5 ${active(n.href) ? "text-violet" : ""}`} aria-hidden />
