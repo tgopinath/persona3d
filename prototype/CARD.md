@@ -6,12 +6,12 @@
 
 **Tags:** AI product, 3D, Three.js, React Three Fiber, Next.js, Privacy, Creative tools
 
-**Live:** not deployed yet. Planned: https://persona3d.vercel.app (update `prototype/mobile.html` once the real URL is known). On a public host without Supabase it shows the in-browser sample character and refuses photo uploads.
-**APK:** not built yet (needs the live URL)
-**iOS repo:** not created yet (planned tgopinath/Persona3D-iOS)
-**Repo:** planned tgopinath/persona3d (local git repo on main, 2 commits)
+**Live:** https://persona3d-phi.vercel.app (public demo: shows the in-browser sample character and refuses photo uploads; photo upload needs a private deployment with Supabase or local mode)
+**APK:** https://github.com/tgopinath/persona3d/releases/latest/download/persona3d.apk (4,090,608 bytes, release v1.0.0; Capacitor shell, CAMERA permission, Material 3 via the Kolam M3 kit)
+**iOS repo:** https://github.com/tgopinath/Persona3D-iOS (SwiftUI WKWebView shell, Apple HIG via the Kolam iOS kit, camera/photo usage strings)
+**Repo:** https://github.com/tgopinath/persona3d (Vercel project persona3d, git-connected: a push to main deploys)
 **Stack:** Next.js 16, React 19, React Three Fiber + drei, three.js, Zustand, Zod, Supabase (optional), Meshy/Tripo adapters, Vitest
-**Status:** built and verified locally; blocked before publishing (public repo creation was not permitted in this run)
+**Status:** published 2026-11-18
 
 **Env vars:** none needed for the public demo. Optional: MESHY_API_KEY, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, PERSONA3D_SIGNING_SECRET (required if Supabase or a private deployment is used).
 
